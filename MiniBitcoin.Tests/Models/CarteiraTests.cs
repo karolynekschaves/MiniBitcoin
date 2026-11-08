@@ -84,3 +84,22 @@ public class CarteiraTests
         Assert.Throws<ArgumentException>(() => carteira.DebitarBtc((decimal)valor));
     }
 }
+    [Fact]
+    public void CreditarBrl_ComValorValido_DeveAumentarSaldo()
+    {
+        var carteira = new Carteira(100m, 0m);
+
+        carteira.CreditarBrl(50m);
+
+        Assert.Equal(150m, carteira.SaldoBrl);
+    }
+
+    [Fact]
+    public void CreditarBtc_ComValorValido_DeveAumentarSaldo()
+    {
+        var carteira = new Carteira(0m, 0.1m);
+
+        carteira.CreditarBtc(0.2m);
+
+        Assert.Equal(0.3m, carteira.SaldoBtc);
+    }
