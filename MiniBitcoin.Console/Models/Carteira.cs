@@ -38,4 +38,20 @@ public class Carteira
 
         SaldoBtc -= valor;
     }
+
+    public void CreditarBrl(decimal valor)
+    {
+        if (valor <= 0)
+            throw new ArgumentException("O valor do crédito deve ser maior que zero.", nameof(valor));
+
+        SaldoBrl += valor;
+    }
+
+    public void CreditarBtc(decimal valor)
+    {
+        if (valor <= 0)
+            throw new ArgumentException("O valor do crédito deve ser maior que zero.", nameof(valor));
+
+        SaldoBtc += valor;
+    }
 }

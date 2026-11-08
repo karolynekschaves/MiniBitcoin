@@ -1,5 +1,8 @@
 namespace MiniBitcoin.Models;
 
-public class Transacao
-{
-}
+public record Transacao(
+    TipoTransacao Tipo,
+    decimal QuantidadeBtc,
+    decimal ValorBrl,
+    decimal PrecoCotacao,
+    DateTime Data);

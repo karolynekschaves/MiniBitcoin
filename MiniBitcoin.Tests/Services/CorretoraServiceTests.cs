@@ -80,4 +80,4 @@ public class CorretoraServiceTests
 
         Assert.Throws<ArgumentException>(() => corretora.Vender((decimal)quantidade));
     }
-}dotnet test
+}
